@@ -2,7 +2,7 @@
 function init () {
   console.log('init hack')
   // download page
-  $('div.download').parent().append(`<button onclick="getSvg()" class="ayy bj-button fullwidth">Pirate that shit</button>`)
+  $('div.download').parent().append(`<button onclick="getSvg()" class="ayy bj-button fullwidth">Pirate that shit (needs login)</button>`)
   getSvg = () => {
     const iconId = typeof icon_id === 'number' ? icon_id : $(icon_id).attr('value')
     fetch(`/editor/icon/svg/${iconId}?type=${RESOURCE_TYPE}`)
