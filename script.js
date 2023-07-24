@@ -2,7 +2,7 @@
 function init () {
   console.log('init hack')
   // download page
-  $('div.download').parent().append(`<button onclick="getSvg()" class="ayy bj-button fullwidth">Pirate that sh*t</button>`)
+  $('div.download').parent().append(`<button onclick="getSvg()" class="ayy bj-button fullwidth">Pirate that shit</button>`)
   getSvg = () => {
     fetch("/editor/icon/svg/"+$('#icon_id').attr('value')+'?type=sticker')
       .then(r => r.json())
@@ -17,7 +17,7 @@ function init () {
   // check if button is already there
   if ($('.ayy2').length) return
   // editor page
-  $("div.edit-icons-user-actions").after('<button onclick="grabSvg()" class="ayy2 bj-button mg-left-lv1">pirate that sh*t</button>')
+  $("div.edit-icons-user-actions").after('<button onclick="grabSvg()" class="ayy2 bj-button mg-left-lv1">pirate that shit</button>')
   grabSvg = () => {
     const svg = $('.icon-holder').html().replace(/(width|height)="[^"]*"/g, '')
     const url = `data:image/svg+xml,${encodeURIComponent(svg)}`
