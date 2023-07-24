@@ -4,7 +4,7 @@ function init () {
   // download page
   $('div.download').parent().append(`<button onclick="getSvg()" class="ayy bj-button fullwidth">Pirate that shit</button>`)
   getSvg = () => {
-    fetch("/editor/icon/svg/"+$('#icon_id').attr('value')+'?type=sticker')
+    fetch("/editor/icon/svg/"+$('#icon_id').attr('value')+RESOURCE_TYPE)
       .then(r => r.json())
       .then(r => {
         const a = document.createElement('a')
