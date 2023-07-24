@@ -2,7 +2,7 @@
 function init () {
   console.log('init hack')
   // download page
-  $('.download').parent().append(`<button onclick="getSvg()" class="ayy bj-button fullwidth">Pirate that sh*t</button>`)
+  $('div.download').parent().append(`<button onclick="getSvg()" class="ayy bj-button fullwidth">Pirate that sh*t</button>`)
   getSvg = () => {
     fetch("/editor/icon/svg/"+$('#icon_id').attr('value')+'?type=sticker')
       .then(r => r.json())
@@ -17,7 +17,7 @@ function init () {
   // check if button is already there
   if ($('.ayy2').length) return
   // editor page
-  $(".edit-icons-user-actions").after('<button onclick="grabSvg()" class="ayy2 bj-button mg-left-lv1">pirate that sh*t</button>')
+  $("div.edit-icons-user-actions").after('<button onclick="grabSvg()" class="ayy2 bj-button mg-left-lv1">pirate that sh*t</button>')
   grabSvg = () => {
     const svg = $('.icon-holder').html().replace(/(width|height)="[^"]*"/g, '')
     const url = `data:image/svg+xml,${encodeURIComponent(svg)}`
@@ -32,7 +32,7 @@ init()
 
 // observe for page with .download and .ayy missing next to each other
 const observer = new MutationObserver((mutations, observer) => {
-  $('.download').each((i, el) => {
+  $('div.download').each((i, el) => {
     if (!$(el).parent().find('.ayy').length) {
       init()
     }
