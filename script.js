@@ -20,7 +20,7 @@ function init () {
   // editor page
   $("div.edit-icons-user-actions").after('<button onclick="grabSvg()" class="ayy2 bj-button mg-left-lv1">pirate that shit</button>')
   grabSvg = () => {
-    const svg = $('.icon-holder').html().replace(/(width|height)="[^"]*"/g, '')
+    const svg = $('.icon-holder').html().replace(/ \b(width|height)="[^"]*"/g, '')
     const url = `data:image/svg+xml,${encodeURIComponent(svg)}`
     const a = document.createElement('a')
     a.href = url
